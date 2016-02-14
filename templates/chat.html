@@ -1,0 +1,111 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Anonymous chatting</title>
+ <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="{% static 'css/toastr.css' %}">
+<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  </head>
+
+  <body>
+<div id='session' class = ''>
+<div class="container clearfix">
+    <div class="people-list" id="people-list">
+        <ul class="list">
+          <li class="clearfix">
+            <div class="about">
+              <div class="name">Total Online</div>
+              <div class="status totalonline">
+                <i class="fa fa-circle online"></i> online : {{ online }}
+              </div>
+            </div>
+          </li>
+
+          <li class="clearfix searchingforpartner hide">
+            <div class="about">
+              <div class="name">Status</div>
+              <div class="status">
+                <i class="fa fa-spinner fa-pulse" style= "color:white;"></i>&nbsp Searching for partner
+              </div>
+            </div>
+          </li>
+
+          <li class="clearfix partnerleft hide">
+            <div class="about">
+              <div class="name">Status</div>
+              <div class="status">
+                <i class="fa fa-circle offline"></i>&nbsp Partner left
+              </div>
+            </div>
+          </li>
+
+          <li class="clearfix connected hide">
+            <div class="about">
+              <div class="name">Status</div>
+              <div class="status">
+                <i class="fa fa-circle online"></i>&nbsp Connected
+              </div>
+            </div>
+          </li>
+
+          <li class="clearfix notconnected ">
+            <div class="about">
+              <div class="name">Status</div>
+              <div class="status">
+                <i class="fa fa-circle offline"> </i> Not Connected
+              </div>
+            </div>
+          </li>
+
+
+        <button type="button" class="btn btn-success startchat ">Start chat</button><br>
+        <button type="button" class="btn btn-success newchat hide">New chat</button>
+        <button type="button" class="btn btn-danger hide esfnp">Exit and search for new partner</button>
+        <button type="button" class="btn btn-danger hide stopsearch">Stop Searching</button>
+        </ul>
+    </div>
+    
+    <div class="chat">
+      <div class="chat-header clearfix">
+        <img src="{% static 'user.ico' %}" alt="avatar" width = "26" height = "26"/>
+        
+        <div class="chat-about">
+          <div class="chat-with">Chat with Anonymous</div>
+          <!-- <div class="chat-num-messages">already 1 902 messages</div> -->
+        </div>
+        <i class="fa fa-star"></i>
+      </div> <!-- end chat-header -->
+      
+      <div class="chat-history disabled ">
+        <ul id = "messages" style = "overflow-x: hidden;">
+          
+
+               
+        </ul>
+        
+      </div> <!-- end chat-history -->
+
+      <div class="chat-message clearfix" >
+        <textarea  name="message-to-send" disabled="disabled"  id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
+        <button class "sendbutton unactive" id = "sendbutton">Send</button>
+
+      </div> <!-- end chat-message -->
+      
+    </div> <!-- end chat -->
+    
+  </div> <!-- end container -->
+
+
+<p style ="color:black; padding-top:20px; float:right "align="center" > Created by Harish Bisht , Email:   Harishbisht092@gmail.com </p>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/new.js' %}"></script>
+
+<script src="{% static 'js/toastr.js' %}"></script>
+  </body>
+</html>
