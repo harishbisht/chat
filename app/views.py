@@ -89,11 +89,11 @@ def checkmessages(request):
 		return HttpResponse(data, content_type='application/json')
 	else:
 		return HttpResponse("Email-id: harishbisht092@gmail.com <br> Github: github.com/harishbisht")
-# flag value meaning
-# // 0 means your are connected sucessfully  and you get the message 
-# // 1 means your are connected but no messages yet
-# // 2 means your partner is offline now and not connected
-#//3 not connected yet 
+	# flag value meaning
+	# // 0 means your are connected sucessfully  and you get the message 
+	# // 1 means your are connected but no messages yet
+	# // 2 means your partner is offline now and not connected
+	#//3 not connected yet 
 
 
 
